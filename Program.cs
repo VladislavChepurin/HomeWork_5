@@ -155,6 +155,15 @@ class MainClass
 				Console.Write(c);
 				sb.Append(c); // добавляем к буферу
 			}
+            else if (key.Key == ConsoleKey.Backspace)
+            {
+				if(sb.Length> 0)
+                {
+					Console.WriteLine();
+					sb.Remove(sb.Length - 1, 1);
+					Console.Write(sb);
+				}			
+			}
 		}
 		return sb.ToString();
     }
