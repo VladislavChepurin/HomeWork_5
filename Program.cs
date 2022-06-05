@@ -8,10 +8,20 @@ class MainClass
 	{
 		//Объявление кортежа декоструировано
 		(string name, string surname, int age, bool isPets, int amountPets, string[] namePets, int amountColor, string[] colectionColor) = GetFillIn();
-		ShowData(in name, in surname, in age, in isPets, in amountPets, in namePets, in amountColor, in colectionColor);
+		ShowData(in name, in surname, in age, in isPets, in amountPets, namePets, in amountColor, colectionColor);
 	}
-
-	static void ShowData(in string name, in string surname, in int age, in bool isPets, in  int amountPets, in string[] namePets, in int amountColor, in string[] colectionColor)
+	/// <summary>
+	/// Метод вывода на консоль, все параметры in, кроме ссылочных
+	/// </summary>
+	/// <param name="name"></param>
+	/// <param name="surname"></param>
+	/// <param name="age"></param>
+	/// <param name="isPets"></param>
+	/// <param name="amountPets"></param>
+	/// <param name="namePets"></param>
+	/// <param name="amountColor"></param>
+	/// <param name="colectionColor"></param>
+	static void ShowData(in string name, in string surname, in int age, in bool isPets, in  int amountPets, string[] namePets, in int amountColor, string[] colectionColor)
     {
 		Console.WriteLine("<--------------->");
 		Console.WriteLine($"Вас зовут {name}");
@@ -73,7 +83,7 @@ class MainClass
 		while ((keyPets = Console.ReadKey(true)).KeyChar != 'д' && keyPets.KeyChar != 'н') ; // пока не нажали y или n
 
 		char c = keyPets.KeyChar; // нажатая клавиша
-		if (c == 'д') //Если нажата клавиша д, то оьрабатвыем код по питомцам
+		if (c == 'д') //Если нажата клавиша д, то обрабатвыем код по питомцам
 		{
 			userAdd.isPets = true;
 
@@ -116,6 +126,7 @@ class MainClass
 	/// <returns></returns>
 	static string[] GetAraayUser(int amountPets, string literalConsole)
     {
+		//Используем List для заполнения
 		List<string> tempArray = new();
 
 		for (int i = 0; i < amountPets; i++)
