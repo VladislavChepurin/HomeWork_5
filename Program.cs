@@ -13,7 +13,6 @@ class MainClass
 
 	static void ShowData(in string name, in string surname, in int age, in bool isPets, in  int amountPets, in string[] namePets, in int amountColor, in string[] colectionColor)
     {
-		//Объявление кортежа декоструировано	
 		Console.WriteLine("<--------------->");
 		Console.WriteLine($"Вас зовут {name}");
 		Console.WriteLine($"Ваша фамилия {surname}");
